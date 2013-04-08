@@ -1,0 +1,38 @@
+MIME—Type Examples
+
+The intention of this project is to amass example files of specific mime‐types
+to be used for testing mime parsers.
+
+--
+
+Example files are not required — and encouraged not to — have extensions to be
+included in this collection as that is a dangerous assumption, but, as it
+could potentially be used by a mime parser to suggest the format, at least one
+example per mime directory should contain OS‐specific extensions, an example
+being .ico for Windows’ ‘image/vnd.microsoft.icon’.
+
+e.g.
+├── text
+│   ├── plain
+│   │   ├── An Example File.txt
+│   │   ├── linux-example-file
+│   │   └── Poems.text
+
+As many formats exist from an era pre‐Unicode, multiple example files — where
+aapplicable — should contain different character sets to better test the parser.
+
+Byte‐order marks should be avoided unless acknowledged in the example file’s
+spec. Line‐endings, if used in the example files, should match the platform(s)
+the files exist on unless — again — the spec defines a specific behaviour.
+
+Content encoding, such as base64, should again depend on typical behaviour with
+respect to the example files being included. Identically, example files should
+only be compressed if their format spec supports that. SVG `image/svg+xml`
+supports optional gzip-compression, as does tar. These examples should be
+included in their respective mime directories, and not within 
+`application/gzip`.
+
+For container example files, such as ‘video/avi’, we are not collecting — yet —
+exhaustive examples such that would return ‘video/ogg; codecs=theora,vorbis’
+from a mime parser.
+
